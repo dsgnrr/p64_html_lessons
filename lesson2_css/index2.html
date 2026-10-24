@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Чому стилі в окремому це самий кращий варіант?
+     Тому що ви можете цей файл використовувати одразу для двох та більше html документів одразу -->
+    <!-- тег style вказується тільки в блоці head
+        в тезі style не можна писати інші теги, там тільки синтаксис CSS
+    -->
+    <!-- <style>
+            /* tag_name{
+                color: red;
+                ....
+            } */
+            h2{
+                color:pink;
+            }
+        </style> -->
+    <!-- link має бути ТІЛЬКИ в head -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Стиль тільки для одного елементу -->
+    <h1 style="color: darkgreen; font-size: 70px;">hello</h1>
+    <h2>Text is pink</h2>
+    <h2>Text is pink</h2>
+</body>
+
+</html>

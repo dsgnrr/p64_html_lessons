@@ -3,3 +3,8 @@ h1 {
     font-size: 15px;
     font-weight: lighter;
 }
+span{
+    color: red;
+    font-weight: bold;
+    text-decoration: line-through;
+}
