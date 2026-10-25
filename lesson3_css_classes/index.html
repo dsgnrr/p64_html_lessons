@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+
+    <style>
+        /* Проблема, якщо задавати стилі конкретним може виникнути проблема, нам може не підходити що наприклад усі кнопки однакові, вони можуть бути різними, не усюди шрифт однакового розміру та кольору.
+        На допомогу призодять класи, які дозволяють сгрупувати стилі, та перевикористовувати їх для різних елементів
+        Синтаксис класу:
+        .className{
+            color: red;
+            ...
+        }
+        */
+        /* div{
+            color: red;
+        } */
+        button{
+            color:white;
+            background-color: purple;
+        }
+        .button{
+            display: inline;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(44, 145, 192);
+            color: white;
+            text-transform: uppercase;
+            font-size: 20px;
+            border: 2px dotted white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .container{
+            font-family: Arial, Helvetica, sans-serif;
+            border: 2px solid;
+            border-radius: 8px;
+        }
+
+        .container h1{
+            color: rgb(64, 54, 209);
+            text-transform: lowercase;
+            font-weight: normal;
+        }
+
+        .container p{
+            font-size: 35px;
+            text-transform: lowercase;
+        }
+
+        .container a{
+            border: 2px solid rgb(8, 136, 158);
+            background-color: rgb(156, 36, 76);
+            color: white;
+            font-size: 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor:pointer;
+        }
+        .container a:hover{
+            background-color: rgb(77, 17, 37);
+            font-size: 50px;
+            border: 10px solid rgb(8, 136, 158);
+        }
+        .container a:active{
+            font-size: 20px;
+            background-color: rgb(202, 52, 102);
+            
+        }
+
+        .container .title{
+            text-align: center;
+            font-size: 50px;
+            color: darkgreen;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Стилі наслідуються, усі дочірні елементи(теги) можуть взяти на себе стилі від батьківського тегу -->
+     <!-- Батьківський елемент - це контейнер, який містить якусь кількість тегів у собі, ці елементи називаються дочірніми -->
+
+     <!-- Для тексту був поставлений зелений колір, це означає усі текстові теги будуть зеленого кольору -->
+      <!-- Незаважаючи на те що глобально для усіх div виставлений черовний колір
+       цей дів ігнорує глобальни стилі, він тільки використовує свій стиль який ми вказали в атрибутах -->
+
+
+    <div style="color:green;">
+        <h1>Hello</h1>
+        <b>b tag</b>
+    </div>
+    <div>
+        <h1>Hello</h1>
+    </div>
+
+    <div>
+        <button>DoSmth1</button>
+        <button style="background-color: #1f1f1f;">DoSmth2</button>
+        <span class="button">This button</span>
+        <p class="button">This button</p>
+        <b class="button">This button</b>
+    </div>
+
+    <div class="container">
+        <h1 class="title">Hello</h1>
+        <h1>Tag h1</h1>
+        <p>Tag p</p>
+        <a href="#">Reference</a>
+        <a href="#">Reference</a>
+        <a href="#">Reference</a>
+        <a href="#">Reference</a>
+        <a href="#">Reference</a>
+        <a href="#">Reference</a>
+        <a href="#">Reference</a>
+        <a href="#">Reference</a>
+    </div>
+    <h1>2</h1>
+    <a href="#">default</a>
+
+    <h1 class="title">Hello</h1>
+</body>
+</html>
