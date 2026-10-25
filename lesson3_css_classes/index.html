@@ -29,6 +29,13 @@
             color: white;
             text-transform: uppercase;
             font-size: 20px;
+            /* рамка */
+            /* border: товщина(у пікселях) тип(dotted, solid, dashed) колір */
+            /* border-left
+            border-right
+            border-top
+            border-bottom
+                */
             border: 2px dotted white;
             border-radius: 8px;
             cursor: pointer;
@@ -93,6 +100,46 @@
             font-family: sans-serif;
         }
 
+        .badge{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-right: 15px;
+            padding-left: 15px;
+            border-radius: 8px;
+            border: 5px solid;
+            color: white
+        }
+
+        .fixed{
+            border-color: rgb(41, 248, 41);
+            background-color: rgb(14, 187, 14);
+        }
+         .warning{
+            border-color: rgb(255, 230, 2);
+            background-color: rgb(255, 251, 0);
+        }
+         .critical{
+            border-color: rgb(255, 0, 0);
+            background-color: rgb(190, 41, 41);
+        }
+        .badge-container{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-right: 15px;
+            padding-left: 15px;
+            border-radius: 8px;
+            border: 5px solid;
+            color: white
+        }
+        .badge-container .critical{
+            border-color: rgb(255, 0, 0);
+            background-color: rgb(190, 41, 41);
+        }
+
     </style>
 </head>
 <body>
@@ -103,6 +150,14 @@
       <!-- Незаважаючи на те що глобально для усіх div виставлений черовний колір
        цей дів ігнорує глобальни стилі, він тільки використовує свій стиль який ми вказали в атрибутах -->
 
+    
+    <span class="badge warning">Default</span>
+    <span class="badge critical">Default</span>
+
+    <div class="badge-container">
+        <span class="critical">Critical</span>
+    </div>
+    
 
     <div style="color:green;">
         <h1>Hello</h1>
@@ -114,6 +169,7 @@
 
     <div>
         <button>DoSmth1</button>
+        <span class="badge fixed">Default</span>
         <button style="background-color: #1f1f1f;">DoSmth2</button>
         <span class="button">This button</span>
         <p class="button">This button</p>
@@ -124,6 +180,7 @@
         <h1 class="title">Hello</h1>
         <h1>Tag h1</h1>
         <p>Tag p</p>
+        <span class="badge fixed">Default</span>
         <a href="#">Reference</a>
         <a href="#">Reference</a>
         <a href="#">Reference</a>
@@ -136,6 +193,7 @@
     <h1>2</h1>
     <a href="#">default</a>
 
+    <span class="badge fixed">Default</span>
     <h1 class="title">Hello</h1>
 </body>
 </html>
