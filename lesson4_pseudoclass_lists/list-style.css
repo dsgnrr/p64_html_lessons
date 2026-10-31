@@ -1,0 +1,144 @@
+#sendButton{
+    background-color: darkred;
+    color: white;
+}
+
+/* Налаштування стилів для списку */
+.task-list{
+    /* square, circle, disc */
+    list-style-type: none; 
+    list-style-position: inside;
+    padding: 0px;
+    margin: 20px auto;
+    /* border: 1px solid; */
+    width: 350px;
+    font-family: Arial;
+    box-shadow: 0 10px 12px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Налаштування для елементів списку */
+.task-list li{
+    padding: 14px 18px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    border-left: 5px solid #3b82f6;
+}
+
+/* Налаштування тільки для першого елемента списку */
+/* .task-list :first-child{
+    border-top: none;
+    border-left: 5px solid #fa7000;
+}
+
+.task-list li:first-child{
+   text-transform: uppercase;
+   font-weight: bold;
+} */
+
+/* Налаштування тільки для останнього елемента списку */
+/* .task-list :last-child{
+    border-bottom: none;
+    border-left: 5px solid #00fabb;
+} */
+
+/* Налаштування тільки для парних елементів списку */
+.task-list li:nth-child(even){
+    background-color: #f8fafc;
+}
+
+/* Налаштування елементів списку при наведені курсору на елемент */
+.task-list li:hover{
+    background-color: #eff6ff;
+}
+
+/* Налаштування тільки для елементів з класом priority  */
+.task-list li.priority{
+    background-color: #fef2f2;
+    border-left-color: #ef4444;
+    color: #991b1b;
+    font-weight: bold;
+}
+
+/* Налаштування тільки для елементів без класу priority  */
+.task-list li:not(.priority){
+    color: #334155;
+}
+
+/* Налаштування при наведені курсору тільки для елементів без класу priority  */
+.task-list li:not(.priority):hover{
+    color: #1d4ed8;
+}
+
+
+ /* 
+ 1n - кожен перший
+ 2n - кожен другий
+ 3n - кожен третій
+ 3n - кожен четвертий
+ 4n - кожен п'ятий
+ і так далі
+ */
+/* .task-list li:nth-child(5n){
+    background-color: #f8fafc;
+} */
+
+.feature-list{
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 350px;
+    font-family: Arial;
+}
+.feature-list li{
+    position: relative;
+    padding: 12px 15px 12px 40px;
+    margin-bottom: 10px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    color: #334155;
+    overflow: hidden;
+}
+
+/* Псевдоелементи -- вони дозволяють додати додатовйи елемент до вашого тегу
+Йому можна задавати такі ж самі стилі як і іншим елементам. Є два типи псевдоелементів
+::after - контент додається ПІСЛЯ
+::before - контент додається ДО
+
+якщо ви створюєте псевдо елемент, ОБОВ'ЯЗКОВО потрібно задати властивість content
+якщо ви не хочете нічого писати залишіть просто пустий рядок content: ""
+якщо потрібен текст пишіть його в лапках content: "Text"
+*/
+.feature-list li::before{
+    content: "✔";
+    text-align: center;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background-color: #3b82f6;
+    color:#ffffff;
+    font-size: 12px;
+    border-radius:50%;
+}
+
+.feature-list li::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top:0;
+    height: 100%;
+    width: 4px;
+    background-color: #10b981;
+    transform: scaleY(0);
+}
+
+.feature-list li:hover{
+    background-color: #f1f5f9;
+}
+.feature-list li:hover::after{
+    transform: scaleY(1);
+}

@@ -1,0 +1,53 @@
+/* Можна виставити загальний стиль для УСІХ елементів */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Абсоллютна позиція - це позиція коли елемент, знаходиться на одному місті і ніяк не рухається
+Завдяки цій позиції ми можемо ставити поверх цього елементу інші
+Щоб абсолютний елемент не виходив за межі батьківсього елементу, батьку виставляємо
+position: raletive
+*/
+
+/* height/ width - висота ширина елементів */
+
+/* top/bottom/left/right - це відступи від сторін. Дозволяють виставити позицію елементу на сторінці*/
+.box{
+    position: relative;
+    /* border: 5px solid; */
+    background-color: darkgreen;
+    height: 200px;
+    width: 200px;
+    margin: 20px auto;
+    z-index: 1;
+}
+.sub-box-1{
+    border: 1px solid;
+    position: absolute;
+    background-color: yellow;
+    height: 50%;
+    width:50%;
+    z-index:-1;
+}
+.sub-box-1.right{
+    left: 50%;
+    
+}
+.sub-box-2{
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+    height: 45%;
+    width:45%;
+    top: 2.5%;
+    left: 2.5%;
+    z-index:-1;
+}
+
+.box:hover{
+    /* transform: scaleY(1.2);
+    transform: scaleX(1.2); */
+    transform: scale(1.2);
+}
