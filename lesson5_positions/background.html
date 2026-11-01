@@ -9,9 +9,31 @@
             background-image: url('../assets/background.jpg');
             background-position: center;
         }
+        .conatiner{
+            position: relative;
+            width:200px;
+            height: 250px;
+            border: 1px solid;
+        }
+        .conatiner img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* Пропрції картинки
+            -contain - зберегти пропорції картинки всі, і помістити у контейнр
+            - cover - накрити контейнер картинкою, при цьому зберегти пропрції, якась частина картинки обрізається
+
+            */
+            object-fit:contain;
+            /* Прозорість число між 0 та 1 */
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
+    <div class="conatiner">
+        <img class="img" src="../assets/cat.jpg" alt="cat">
+    </div>
     
 </body>
 </html>
