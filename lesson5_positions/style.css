@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.square{
+    width: 100px;
+    height: 100px;
+    background-color: darkgreen;
+    border: 1px solid;  
+}
+.static{
+     /* Звичайна позиція всіх елементів, тому задавати її сенсу немає
+    На нього не діють властивості:
+    top/left/right/bottom
+    z-index
+    */
+    position:static;
+}
+.relative{
+    background-color: #1f1f1f;
+    /* Відносна позиція - це позиція елементу відносно його власної початкової позиції
+    Ми можемо йому задавати позицію використовуючи top/left/right/bottom */
+    /* Використання, якщо потрібно трішки посунути елемент та у якості батька для абсолютних
+    елементів */
+    position: relative;
+    left: 100px;
+}
+.absolute{
+    /*Абсолютне позиціювання - це коли елемент повністю виривається з потоку документа
+    він не займає місця, елементи можуть ставитися прямо на нього
+    top/left/right/bottom*/
+    background-color: #5e0e5a;
+    position: absolute;
+    top:0;
+    left: 150px;
+    z-index: -1;
+}
+
+.container{
+    height: 200px;
+    background-color: azure;
+    border: 1px solid;
+    position: relative;
+}
+
+.square-absolute{
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    background-color: cadetblue;
+    top: 100%;
+    left: 100%;
+    transform: translateX(-100%) translateY(-100%);
+}
+.header{
+    /* Фіксована позиція, схожий на абсолютну позиці, прив'язується тільки до вікна. Коли сторінка прокрочується цей елемент
+    залишається на одному місці. В основному використовується для хедеру, або кнопка вгору або плаваючі меню */
+    position: fixed;
+    background-color: brown;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+}
