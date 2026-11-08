@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    width: calc(100% - 10px);
+    height: 200px;
+    border: 5px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.row-middle {
+    width: calc(100% - 10px);
+    height: 500px;
+    border: 5px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.square {
+    margin: 5px;
+    float: right;
+    width: calc(25% - 10px);
+    height: calc(100% - 10px);
+    border: 5px solid;
+}
+
+.square-left {
+    margin: 5px;
+    float: left;
+    width: calc(75% - 10px);
+    height: calc(100% - 10px);
+    border: 5px solid;
+}
+
+.square-right {
+    margin: 5px;
+    float: left;
+    width: calc(25% - 10px);
+    height: calc(100% - 10px);
+    border: 5px solid;
+}
