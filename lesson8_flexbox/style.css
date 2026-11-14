@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.flex-container{
+    /* Включаємо режим  flex для контейнера*/
+    display: flex;
+    /* Обираємо лінію на координаті 
+    X:
+    row (default)
+    row-reverse
+    Y:
+    column
+    column-reverse
+    
+    */
+
+    flex-direction: row;
+
+   /* Перенесення елементів на новий рядок, якщо не вистачає місця:
+         - nowrap (за замовчуванням): усе в один рядок (елементи будуть стискатися)
+         - wrap: перенесення на наступний рядок зверху вниз
+         - wrap-reverse: перенесення знизу вгору */
+    flex-wrap: wrap;
+    border: 6px solid;
+    margin: 5px;
+    padding: 5px;
+    min-height: 500px;
+
+    /* 5. Вирівнювання вздовж ГОЛОВНОЇ осі (за замовчуванням — по горизонталі):
+         - flex-start (за замовчуванням): притиснуті до початку осі
+         - flex-end: притиснуті до кінця осі
+         - center: по центру
+         - space-between: перший на початку, останній у кінці, між ними рівні відступи
+         - space-around: рівні відступи навколо кожного елемента (крайні у 2 рази менші)
+         - space-evenly: абсолютно однакові відступи всюди (включно з краями) */
+
+    justify-content: space-between;
+
+    /* 6. Вирівнювання вздовж ПОПЕРЕЧНОЇ осі (за замовчуванням — по вертикалі) у межах ОДНОГО рядка:
+         - stretch (за замовчуванням): розтягуються на всю висоту контейнера/рядка (якщо не задано height)
+         - flex-start: притиснуті до верхнього краю
+         - flex-end: притиснуті до нижнього краю
+         - center: по центру вертикалі
+         - baseline: вирівнювання за базовою лінією тексту всередині елементів */
+    align-items: center;
+    /* 7. Вирівнювання РЯДКІВ уздовж поперечної осі (працює ТІЛЬКИ при flex-wrap: wrap і наявності кількох рядків):
+         - stretch (за замовчуванням): рядки розтягуються, займаючи весь вільний простір
+         - flex-start: усі рядки притиснуті до початку
+         - flex-end: усі рядки притиснуті до кінця
+         - center: рядки згруповані по центру
+         - space-between / space-around / space-evenly: розподіл простору між рядками */
+    align-content: space-around;
+
+    /* 8. Відступи між елементами (не додає відступів по зовнішніх краях контейнера!):
+         - gap: <row-gap> <column-gap> (можна задати одне значення для обох напрямків) */
+    gap: 20px 15px;
+}
+
+.flex-item{
+    border:6px solid;
+    margin: 5px;
+    font-size:50px;
+    text-align: center;
+    padding:20px;
+
+    /* 1. Порядок відображення елемента:
+         - за замовчуванням у всіх 0. Елементи шикуються від меншого значення до більшого (підтримує від'ємні числа). */
+    order: 0;
+
+    /* 2. Коефіцієнт жадібності (здатність рости й забирати вільне місце):
+         - 0 (за замовчуванням): не росте, залишається розміром із flex-basis/контент
+         - 1 і вище: пропорційно ділить вільний простір, що залишився */
+    
+    flex-grow: 0;
+
+    /* 3. Коефіцієнт стискання (наскільки сильно елемент готовий стиснутися, якщо місця не вистачає):
+         - 1 (за замовчуванням): стискається пропорційно іншим
+         - 0: заборона на стискання (елемент збереже свій базовий розмір і може вилізти за межі) */
+    flex-shrink: 1;
+
+    /* 4. Базовий розмір елемента вздовж головної осі ДО розподілу вільного місця:
+         - auto (за замовчуванням): дивиться на width (для row) або height (для column), або на розмір контенту
+         - будь-яке значення в px, %, rem тощо. Має пріоритет над width/height! */
+    /* flex-basis: 25%; */
+
+    /* 5. Скорочення (shorthand) для grow, shrink та basis:
+         - flex: <flex-grow> <flex-shrink> <flex-basis>
+         - популярні пресети:
+           flex: 1;       -> еквівалент flex: 1 1 0% (елементи ділять місце порівну незалежно від контенту)
+           flex: auto;    -> еквівалент flex: 1 1 auto (ділять вільне місце з урахуванням розміру контенту)
+           flex: none;    -> еквівалент flex: 0 0 auto (повністю жорсткий елемент: не росте і не стискається) */
+    flex: 0 1 200px;
+      /* 6. Індивідуальне вирівнювання вздовж поперечної осі (перевизначає align-items батька):
+         - auto (за замовчуванням): наслідує align-items батька
+         - flex-start | flex-end | center | baseline | stretch */
+    align-self: auto;
+}
+
+.item-1{
+    order: 1;
+    flex-grow: 1;
+}
+.item-2{
+    order: -1;
+    flex-grow: 2;
+    align-self: flex-start;
+}
+.item-3{
+    flex: 0 0 250px;
+    align-self: flex-end;
+}
+.item-4{
+    align-self:stretch;
+}
+.item-5{
+    align-self: baseline;
+}
+
+.container{
+     padding: 5px;
+     display: flex;
+     height:500px;
+     border: 2px solid rgb(2, 58, 80);
+     border-radius: 8px;
+     background-color: rgb(224, 245, 253);
+     margin:5px;
+     box-shadow: 6px 2px 10px black;
+     gap: 5px;
+     flex-shrink: 2;
+}
+.left{
+     display: flex;
+     color: white;
+     font-size: 50px;
+     padding: 10px;
+     /* flex: 0 0 calc(70% - calc(5px / 2)); */
+     flex-grow: 2;
+     flex-shrink: 1;
+     /* border:1px solid; */
+     border-radius: 8px;
+     background-color: rgb(60, 93, 105);
+     /* align-content: stretch; */
+     align-items: flex-start;
+}
+.square{
+     background-color: orange;
+     border: 1px solid black;
+     /* flex: 0 0 calc(20% - 10px); */
+     height: 20%;
+     margin: 5px;
+}
+
+.sq-1{
+     align-self: flex-end;
+     flex-grow: 2;
+}
+
+.sq-2{
+     align-self: center;
+     flex-grow: 1;
+}
+
+.sq-3{
+     height: 40%;
+     flex-grow: 1;
+     order: 3;
+}
+
+.sq-4{
+     flex-grow: 3;
+     order:1;
+}
+.sq-5{
+     order: -1;
+     flex-grow: 1;
+}
+
+
+.right{
+     display: flex;
+     flex-direction: column;
+     color: white;
+     font-size: 50px;
+     padding: 10px;
+     /* flex: 0 0 calc(30% - calc(5px / 2)); */
+     flex-grow: 1;
+     flex-shrink: 1;
+     /* border:1px solid; */
+     border-radius: 8px;
+     background-color: rgb(60, 93, 105);
+}
