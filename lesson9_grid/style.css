@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.grid-container{
+    display: grid;
+    border: 3px solid;
+    margin:5px;
+    height: 500px;
+
+    /*Створюємо колонки
+    Ви можете вказати фіксовані одиниці або відносні
+    можна вказати авто, розмір буде розрахований автоматично
+    В нашому прикладі ми створили 4 колонки, ви можете робити більше або менше
+    */
+    /* grid-template-columns: 35% 35% auto;
+    grid-template-rows: 25% auto auto auto; */
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 150px;
+    /* row-gap: 10px; */
+    /* column-gap: 10px; */
+    /* вирівнювання елементів по вертикальній лінї */
+    justify-items: center;
+     /* вирівнювання горизонтальній лінії по вертикальній лінї */
+    align-items: center;
+}
+
+.item{
+    /* width: 100px; */
+    height: 100px;
+    background-color: green;
+    border:1px solid;
+}
