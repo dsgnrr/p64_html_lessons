@@ -2,13 +2,25 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+}
+
+.grid-template{
+    display: grid;
+    min-height: 500px;
+    grid-template-areas: 
+        "a a a"
+        "b b c"
+        "d d d";
 }
 
 .grid-container{
     display: grid;
     border: 3px solid;
     margin:5px;
-    height: 500px;
+    min-height: 700px;
 
     /*Створюємо колонки
     Ви можете вказати фіксовані одиниці або відносні
@@ -18,19 +30,72 @@
     /* grid-template-columns: 35% 35% auto;
     grid-template-rows: 25% auto auto auto; */
 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 150px;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(5, 120px);
+    gap:5px;
     /* row-gap: 10px; */
     /* column-gap: 10px; */
-    /* вирівнювання елементів по вертикальній лінї */
-    justify-items: center;
-     /* вирівнювання горизонтальній лінії по вертикальній лінї */
-    align-items: center;
+
+    /* вирівнювання елементів по горизонтальній лінї */
+    /* для stretch непотрібно вказувати розмір елементів
+       якщо це justify-items не вказується ширина
+    */
+    justify-items: stretch;
+     /* вирівнювання по вертикальній  лінії  */
+     /* для stretch непотрібно вказувати розмір елементів
+       якщо це align-items не вказується висота
+    */
+    align-items: stretch;
+
+    /* Вирівннювання самої сітки в контейнері, якщо є вільне місце */
+    /* вирівнюємо сітку по горизонталі */
+    justify-content: center;
+
+     /* вирівнюємо сітку по вертикалі */
+    align-content: center;
+
 }
 
 .item{
+    /* розміри елементам задаємо тільки тоді коли немає stretch */
     /* width: 100px; */
-    height: 100px;
+    /* height: 100px; */
     background-color: green;
     border:1px solid;
+}
+
+.item-1{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(34, 0, 128);
+    border:1px solid;
+    justify-self: start;
+    align-self: end;
+
+}
+
+.item-2{
+    background-color: rgb(230, 0, 76);
+    border:1px solid;
+    /* ростягування елементу на колонки */
+    grid-column: 2 / 5;
+
+}
+
+.item-6{
+    background-color: rgb(230, 92, 0);
+    border:1px solid;
+    /* ростягування елементу на рядки */
+    grid-row: 2 / 5;
+    /* позиція у сітці */
+    grid-column: 4;
+   
+
+}
+
+.item-8{
+    background-color: rgb(176, 0, 230);
+    border:1px solid;
+    grid-column: span 2;
+    grid-row: span 2;
 }
