@@ -100,6 +100,7 @@ nav a:hover{
     border: 5px solid #ef00b3;
     flex-grow: 3;
     border-radius: 5px;
+    position: relative;
 }
 
 .animation-row-1{
@@ -118,15 +119,22 @@ nav a:hover{
     width: 40px;
     background-color: #ef00b3;
     left: 0%;
-    transition-property: left;
-    transition-duration: 300ms;
+    /* transition-property: left;
+    transition-duration: 300ms;*/
+    transform: rotate(0deg); 
+
+    transition: left 300ms, transform 300ms;
 }
 
+.square-1:hover{
+    transform: scale(2);
+}
 .animation-row-1:hover .square-1{
-    
     left: 80%;
-    transition-property: left;
-    transition-duration: 300ms;
+    /* transition-property: left;
+    transition-duration: 300ms; */
+    transition: left 300ms, transform 300ms;
+    transform: rotate(180deg);
 }
 
 
