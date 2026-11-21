@@ -52,6 +52,7 @@ header .user-photo{
 }
 
 nav{
+    margin: 0px 2px;
     display: flex;
     flex-direction: row;
     border: 5px solid #ef00b3;
@@ -69,24 +70,68 @@ nav a{
     padding: 5px 2px 5px 2px;
     text-transform: uppercase;
     font-weight: bold;
+    transition-property: background-color;
+    transition-duration: 300ms;
+    transition-delay: 100ms;
 }
 
+nav a:hover{
+    background-color: #ef00b3;
+    transition-property: background-color;
+    transition-duration: 300ms;
+    transition-delay: 100ms;
+    transition-timing-function: cubic-bezier(0.0, 0.5, 0.5 ,1.0);
+}
 
 .container{
     display: flex;
-    min-height: 500px;;
+    min-height: 500px;
+    margin: 0px 2px;
+    gap: 5px;
 }
 
 .container aside{
-    border: 1px solid;
+    border: 5px solid #ef00b3;
     flex-grow: 1;
+    border-radius: 5px;
 }
 
 .container main{
-    border: 1px solid;
+    border: 5px solid #ef00b3;
     flex-grow: 3;
+    border-radius: 5px;
 }
 
-footer{
+.animation-row-1{
+    display: flex;
+    position: relative;
     border: 1px solid;
+    margin: 5px;
+    height: 50px;
+    align-items: center;
+    
+}
+
+.square-1{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #ef00b3;
+    left: 0%;
+    transition-property: left;
+    transition-duration: 300ms;
+}
+
+.animation-row-1:hover .square-1{
+    
+    left: 80%;
+    transition-property: left;
+    transition-duration: 300ms;
+}
+
+
+footer{
+    border: 5px solid #ef00b3;
+    border-radius: 5px;
+    margin: 5px 2px;
 }
