@@ -123,7 +123,7 @@ nav a:hover{
     transition-duration: 300ms;*/
     transform: rotate(0deg); 
 
-    transition: left 300ms, transform 300ms;
+    transition: left 300ms, transform 300ms, background-color 300ms;
 }
 
 .square-1:hover{
@@ -133,8 +133,9 @@ nav a:hover{
     left: 80%;
     /* transition-property: left;
     transition-duration: 300ms; */
-    transition: left 300ms, transform 300ms;
+    transition: left 300ms, transform 300ms, background-color 300ms;
     transform: rotate(180deg);
+    background-color: cornflowerblue;
 }
 
 
