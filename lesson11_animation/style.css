@@ -22,6 +22,10 @@
     animation: spin 1s linear infinite;
 }
 
+h1{
+    animation: changingColor 5s linear infinite;
+}
+
 @keyframes changingColor{
     0%{
         color: black;
@@ -38,4 +42,31 @@
     }
 
     100%{color:white};
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    margin: 0px auto;
+    transform: translateX(-20%) translateY(20%) rotate(50deg);
+    animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    10%{
+        transform: scale(2);
+    }
+    12%{
+        transform: scale(2.1);
+    }
+    13%{
+        transform: scale(2);
+    }
+    15%{
+        transform: scale(1);
+    }
 }
